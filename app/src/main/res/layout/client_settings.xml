@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/csetting_bg">
+
+        <ImageView
+            android:id="@+id/imageBack"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_arrow_back_green"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <LinearLayout
+            android:id="@+id/linear_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/img_matching"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_settings_green" />
+
+            <TextView
+                android:id="@+id/text_lawyer_matching"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:lineHeight="39.01dp"
+                android:text="Settings"
+                android:textColor="#00292D"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linear_settings">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Privacy Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:text="Privacy"
+                    android:textColor="#00292D"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#00292D" />
+
+                <Switch
+                    android:id="@+id/switchShowContact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show contact number to users"
+                    android:textColor="#00292D"
+                    android:thumbTint="#0C9B79"
+                    />
+
+                <Switch
+                    android:id="@+id/switchShowEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show email to users"
+                    android:textColor="#00292D"
+                    android:thumbTint="#0C9B79"/>
+
+                <Switch
+                    android:id="@+id/switchShowLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Show address to users"
+                    android:textColor="#00292D"
+                    android:thumbTint="#0C9B79"/>
+
+                <!-- Notifications Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="8dp"
+                    android:text="Notifications"
+                    android:textColor="#00292D"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#00292D" />
+
+                <Switch
+                    android:id="@+id/switchPushNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enable push notifications"
+                    android:textColor="#00292D"
+                    android:thumbTint="#0C9B79"/>
+
+                <Switch
+                    android:id="@+id/switchMessageNotifications"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Enable message notifications"
+                    android:textColor="#00292D"
+                    android:thumbTint="#0C9B79"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/bottomNavigation"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:layout_marginStart="25dp"
+    android:layout_marginEnd="25dp"
+    android:layout_marginBottom="25dp"
+    android:layout_alignParentBottom="true"
+    android:background="@drawable/bottom_background"
+    android:elevation="2dp"
+    app:itemIconSize="25dp"
+    app:itemIconTint="@drawable/item_selector"
+    app:itemRippleColor="@android:color/transparent"
+    app:labelVisibilityMode="unlabeled"
+    app:menu="@menu/bottom_menu" />
+</RelativeLayout>

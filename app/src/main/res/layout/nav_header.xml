@@ -1,0 +1,57 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="225dp"
+    android:orientation="vertical"
+    android:background="@drawable/headerbkg"
+    android:padding="16dp">
+
+    <!-- Profile Picture -->
+    <ImageView
+        android:id="@+id/img_profile_picture"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+
+        android:layout_gravity="center"
+        android:gravity="end"
+        android:background="@drawable/circle_background"
+        android:contentDescription="profilepic"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_person_green"
+       />
+
+    <!-- User Name -->
+    <TextView
+        android:id="@+id/user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Full Name"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <!-- Verification Status -->
+    <TextView
+        android:id="@+id/verification_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Not verified"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="14sp"/>
+
+    <!-- Verify Button -->
+    <Button
+        android:id="@+id/verify_profile_button"
+        android:layout_width="150dp"
+        android:layout_height="35dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:backgroundTint="@color/black"
+        android:text="Verify Profile"
+        android:textColor="@android:color/white"
+        android:textSize="10sp"
+        android:onClick="verifyProfile"/>
+</LinearLayout>

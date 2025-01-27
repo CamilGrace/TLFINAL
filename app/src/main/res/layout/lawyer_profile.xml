@@ -1,0 +1,660 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Main Content -->
+        <FrameLayout
+            android:id="@+id/client_dashboard"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/profile_bg">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- Menu Icon -->
+                    <ImageView
+                        android:id="@+id/img_menu"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_gravity="start"
+                        android:layout_marginTop="20dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_menu_green" />
+
+                    <!-- Profile Header Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <!-- Profile Section -->
+                        <LinearLayout
+                            android:id="@+id/linear_profile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/img_screenshot_removebg_preview"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:scaleType="centerInside"
+                                android:src="@drawable/ic_person_green" />
+
+                            <TextView
+                                android:id="@+id/text_tulong_legal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:gravity="center_vertical"
+                                android:includeFontPadding="false"
+                                android:lineHeight="39dp"
+                                android:text="Profile"
+                                android:textColor="#00292D"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <FrameLayout
+                                android:id="@+id/editProfileBtn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="85dp"
+                                android:layout_marginEnd="16dp"
+                                android:background="@drawable/container_button"
+                                android:gravity="center"
+                                android:padding="8dp">
+
+                                <TextView
+                                    android:id="@+id/text_edit_profile"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:text="Edit Profile"
+                                    android:textColor="#FFFBFBFB"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+                            </FrameLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/user_info_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginTop="25dp"
+                            android:layout_marginEnd="25dp"
+                            android:gravity="center_vertical"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/linear_profile">
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/text_full_name"
+                                    android:layout_width="185dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="10dp"
+                                    android:maxLines="2"
+                                    android:text="Full Name"
+                                    android:textColor="#00292D"
+                                    android:textSize="25sp"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/text_verified"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="8dp"
+                                    android:text="Not Verified"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="12sp"
+                                    android:textStyle="bold" />
+
+                                <FrameLayout
+                                    android:id="@+id/container_verify"
+                                    android:layout_width="120dp"
+                                    android:layout_height="30dp"
+                                    android:layout_marginTop="10dp"
+                                    android:background="@drawable/container_button"
+                                    app:layout_constraintEnd_toEndOf="parent"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_verified">
+
+                                    <TextView
+                                        android:id="@+id/text_start_matching"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center_vertical"
+                                        android:layout_marginStart="15dp"
+                                        android:text="Verify Profile"
+                                        android:textColor="#FFFBFBFB"
+                                        android:textSize="10sp"
+                                        android:textStyle="bold" />
+
+                                    <ImageView
+                                        android:id="@+id/img_group_frame_matching"
+                                        android:layout_width="22dp"
+                                        android:layout_height="22dp"
+                                        android:layout_gravity="end|center_vertical"
+                                        android:layout_marginEnd="16dp"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_arrow_forward" />
+                                </FrameLayout>
+                            </LinearLayout>
+
+                            <ImageView
+                                android:id="@+id/img_profile_picture"
+                                android:layout_width="85dp"
+                                android:layout_height="85dp"
+                                android:layout_marginStart="30dp"
+                                android:background="@drawable/circle_background"
+                                android:contentDescription="profilepic"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_person_green" />
+                        </LinearLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Personal Information Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/user_info_layout">
+
+                        <FrameLayout
+                            android:id="@+id/frame_card"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/card_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/text_PersonalInfo"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="16dp"
+                                    android:text="Personal Information"
+                                    android:textColor="#FF01212E"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/text_Gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="GENDER"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_PersonalInfo" />
+                                <TextView
+                                    android:id="@+id/user_gender"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Gender"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Gender" />
+
+                                <TextView
+                                    android:id="@+id/text_Age"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="AGE (Optional)"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_gender" />
+
+                                <TextView
+                                    android:id="@+id/user_age"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Age"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Age" />
+
+                                <TextView
+                                    android:id="@+id/text_availability"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="AVAILABILITY"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_age"/>
+
+                                <TextView
+                                    android:id="@+id/user_availability"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Availablility"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_availability"/>
+                                <LinearLayout
+                                    android:id="@+id/hours_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical"
+                                    android:layout_marginTop="8dp"
+                                    app:layout_constraintTop_toBottomOf="@id/user_availability"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    android:layout_marginStart="20dp">
+
+                                </LinearLayout>
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </FrameLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Contact Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/frame_card">
+
+                        <FrameLayout
+                            android:id="@+id/frame_card2"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/card_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/text_Contact_Details"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="16dp"
+                                    android:text="Contact Details"
+                                    android:textColor="#FF01212E"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/text_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="EMAIL"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Contact_Details" />
+
+                                <TextView
+                                    android:id="@+id/user_email"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Email"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_email" />
+
+                                <TextView
+                                    android:id="@+id/text_contact"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="CONTACT NO."
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_email" />
+
+                                <TextView
+                                    android:id="@+id/user_contact"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Contact No."
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_contact" />
+
+                                <TextView
+                                    android:id="@+id/text_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="OFFICE ADDRESS"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_contact" />
+
+                                <TextView
+                                    android:id="@+id/user_address"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Office Address"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_address" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </FrameLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Credentials Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/frame_card2">
+
+                        <FrameLayout
+                            android:id="@+id/frame_card3"
+                            android:layout_width="match_parent"
+                            android:layout_height="300dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/card_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/text_Credentials"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="16dp"
+                                    android:text="Credentials and Expertise"
+                                    android:textColor="#FF01212E"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/text_Legal"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="LEGAL SPECIALIZATIONS"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Credentials" />
+
+                                <com.google.android.material.chip.ChipGroup
+                                    android:id="@+id/user_legal_services_chips"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginEnd="16dp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Legal" />
+
+                                <TextView
+                                    android:id="@+id/text_Prelaw"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="PRE-LAW DEGREE"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_legal_services_chips" />
+
+                                <TextView
+                                    android:id="@+id/user_prelaw"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Pre-Law Degree"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Prelaw" />
+
+                                <TextView
+                                    android:id="@+id/text_lawschool"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="LAW SCHOOL"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_prelaw" />
+
+                                <TextView
+                                    android:id="@+id/user_lawschool"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Law School"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_lawschool" />
+
+                                <TextView
+                                    android:id="@+id/text_yearsofexp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="YEARS OF EXPERIENCE"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/user_lawschool" />
+
+                                <TextView
+                                    android:id="@+id/user_yearsofexp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Years of Experience"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_yearsofexp" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </FrameLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <!-- Consultation Section -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/frame_card3">
+
+                        <FrameLayout
+                            android:id="@+id/frame_card4"
+                            android:layout_width="match_parent"
+                            android:layout_height="130dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/card_background"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <TextView
+                                    android:id="@+id/text_Consultation"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="16dp"
+                                    android:text="Consultation Fee Details"
+                                    android:textColor="#FF01212E"
+                                    android:textSize="20sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent" />
+
+                                <TextView
+                                    android:id="@+id/text_ConsultationFee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="16dp"
+                                    android:layout_marginTop="10dp"
+                                    android:text="CONSULTATION FEE"
+                                    android:textColor="#7A00292D"
+                                    android:textSize="15sp"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_Consultation" />
+
+                                <TextView
+                                    android:id="@+id/user_ConsultationFee"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="20dp"
+                                    android:layout_marginTop="3dp"
+                                    android:text="Consultaion Fee"
+                                    android:textColor="#00292D"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold"
+                                    app:layout_constraintStart_toStartOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@id/text_ConsultationFee" />
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </FrameLayout>
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp" />
+                </LinearLayout>
+            </ScrollView>
+
+        </FrameLayout>
+
+        <!-- Drawer Navigation Menu -->
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:background="@color/white"
+            app:headerLayout="@layout/nav_header"
+            app:itemIconTint="@color/black"
+            app:itemTextColor="@color/black"
+            app:menu="@menu/nav_menu" />
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="25dp"
+        android:background="@drawable/bottom_background"
+        android:elevation="2dp"
+        app:itemIconSize="25dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_menu" />
+</RelativeLayout>
