@@ -7,6 +7,7 @@ plugins {
     id("com.android.application")
     id("com.google.gms.google-services")
     id("com.google.protobuf") version "0.9.4"
+    id("kotlin-parcelize")
 }
 
 
@@ -77,16 +78,35 @@ dependencies {
     implementation(libs.androidx.cardview)
     implementation(libs.androidx.recyclerview)
 
+
     // Firebase dependencies
     implementation(libs.firebase.auth.ktx)
     implementation(libs.firebase.firestore)
-
+    implementation(libs.firebase.storage.ktx)
+    implementation(platform(libs.firebase.bom.v3280))
+    implementation(libs.firebase.appcheck.playintegrity)
+    implementation(libs.firebase.messaging.ktx)
+    implementation(libs.firebase.functions.ktx)
 
     // Other libraries
     implementation(libs.mhiew.material.calendarview)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation(libs.okhttp)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.activity.ktx.v190)
+    implementation(libs.text.recognition)
+    implementation(libs.material.v1110)
+
+
+    // Glide for Image Loading
+    implementation(libs.glide)
+    implementation(libs.firebase.appcheck.debug)
+    implementation(libs.firebase.messaging)
+    annotationProcessor(libs.compiler)
+
+    // ML Kit Face Detection
+    implementation(libs.face.detection)
 
     // Test dependencies
     testImplementation(libs.junit)

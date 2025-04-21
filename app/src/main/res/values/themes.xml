@@ -1,16 +1,17 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.TLFINAL" parent="Theme.MaterialComponents.DayNight.NoActionBar">
-        <!-- Primary brand color. -->
+    <style name="Base.Theme.TLFINAL" parent="Theme.MaterialComponents.Light.NoActionBar">
 
+        <item name="colorPrimary">@color/primary_green</item>
+        <item name="colorPrimaryVariant">@color/navy_blue</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorAccent">@color/white</item>
-
-
-        <item name="colorSecondary">@color/teal_200</item>
-
+        <item name="colorSecondary">@color/navy_blue_dark</item>
+        <item name="colorSecondaryVariant">@color/navy_blue</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="android:statusBarColor">@color/navy_blue_dark</item>
 
     </style>
+
     <style name="CustomActivityAnimation" parent="@android:style/Animation.Activity">
         <item name="android:activityOpenEnterAnimation">@anim/slide_in_right</item>
         <item name="android:activityOpenExitAnimation">@anim/slide_out_left</item>

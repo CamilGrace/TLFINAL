@@ -3,18 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tlfinal">
 
-    <!-- Permissions for Google services -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- Permissions for Google services and features -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="com.google.android.gms.permission.C2D_MESSAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="com.google.android.gms.permission.C2D_MESSAGE"/> <!-- Keep if using FCM -->
 
-    <!-- Required for Google Play services -->
+    <!-- Camera Permission -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" android:required="false" />
+
+    <!-- Storage Permissions (Adjust based on actual usage and target SDK) -->
+    <!-- For targeting SDK 33+ accessing own media or using Photo Picker -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <!-- <uses-permission android:name="android.permission.READ_MEDIA_VIDEO" /> -->
+    <!-- <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" /> -->
+
+    <!-- For targeting SDK <= 32 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" android:maxSdkVersion="32" />
+    <!-- WRITE needed for saving photos taken with camera ONLY on API <= 28 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="28" tools:ignore="ScopedStorage" />
+
+
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logo"
-        android:label="TULONGLEGAl"
+        android:label="TULONGLEGAL"
         android:supportsRtl="true"
         android:theme="@style/Theme.TLFINAL"
         tools:targetApi="31">
@@ -34,19 +50,68 @@
         <activity android:name=".RoleSelectionActivity" />
         <activity android:name=".ClientRegistrationActivity" />
         <activity android:name=".LawyerRegistrationActivity" />
+        <activity android:name=".AffiliationSelectionActivity" />
+        <activity android:name=".PAORequirementsActivity" />
+        <activity android:name=".PrivateLawyerRequirementsActivity" />
+
+        <!-- Client Specific Activities -->
         <activity android:name=".ClientDashboardActivity" />
         <activity android:name=".ClientSettingsActivity" />
         <activity android:name=".ClientProfileActivity" />
         <activity android:name=".ClientEditProfileActivity" />
-        <activity android:name=".ClientMessagingActivity" />
-        <activity android:name=".ClientInboxActivity" />
-        <activity android:name=".LawyerLoginActivity" />
         <activity android:name=".LawyerMatchingActivity"/>
+        <activity android:name=".MatchesFoundActivity" />
+
+        <!-- Lawyer Specific Activities -->
+        <activity android:name=".LawyerLoginActivity" />
         <activity android:name=".LawyerDashboardActivity" />
         <activity android:name=".LawyerProfileActivity" />
         <activity android:name=".LawyerEditProfileActivity" />
-        <activity android:name=".MatchesFoundActivity" />
 
+        <!-- Shared / Messaging Activities -->
+        <activity android:name=".InboxActivity" />
+        <activity android:name=".ChatActivity" />
+        <activity android:name=".LawyerInboxActivity" />
+        <activity android:name=".LawyerChatActivity" />
+
+        <!-- Document Library Activities -->
+        <activity android:name=".DocumentLibraryActivity" />
+        <activity android:name=".DocumentDetailActivity" />
+
+
+        <!-- File Provider -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <service
+            android:name=".MyFirebaseMessagingService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- Set custom default icon. This is used when no icon is set for incoming
+             notification messages. See README(https://goo.gl/l4GJaQ) for more. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@drawable/ic_stat_notification" />
+        <!-- Create R.drawable.ic_stat_notification (e.g., a small white bell or logo) -->
+        <!-- Set color used with incoming notification messages. -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/navy_blue_dark" />
+        <!-- Define R.color.notification_color in colors.xml (e.g., your primary color) -->
+
+
+        <!-- ... your provider ... -->
 
     </application>
 </manifest>

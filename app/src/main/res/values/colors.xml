@@ -9,4 +9,16 @@
     <color name="white">#FFFFFFFF</color>
     <color name="lavender">#8692f7</color>
     <color name="grey">#d2d2d2</color>
+
+    <color name="your_active_color">#007BFF</color>
+    <color name="your_inactive_color">#c0c0c0</color>
+
+    <color name="primary_green">#059597</color>
+    <color name="chip_selected_green">#00FCFF</color>
+
+    <color name="navy_blue">#1A2A6C</color>
+    <color name="navy_blue_dark">#031C50</color>
+    <color name="soft_gray">#F2F2F2</color>
+    <color name="gray_dark">#2F3036</color>
+
 </resources>

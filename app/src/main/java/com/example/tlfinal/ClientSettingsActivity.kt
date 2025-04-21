@@ -28,7 +28,7 @@ class ClientSettingsActivity : AppCompatActivity() {
             when (item.itemId) {
                 R.id.bottom_message -> {
                     // Navigate to Profile Activity
-                    startActivity(Intent(this, ClientInboxActivity::class.java))
+                    startActivity(Intent(this, InboxActivity::class.java))
                     true
                 }
                 R.id.bottom_home -> {

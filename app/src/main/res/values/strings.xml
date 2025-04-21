@@ -1,4 +1,114 @@
 <resources>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
+
+    <string name="default_notification_channel_id" translatable="false">tl_final_new_messages</string>
+    <string name="default_notification_channel_name">New Messages</string>
+
+    <string name="terms_content_placeholder">
+        <![CDATA[
+        <b>TulongLegal Terms and Conditions</b><br/><br/>
+        TulongLegal is a mobile platform designed by Team TulongLegal as a capstone project to help users connect with verified legal professionals in Baguio City. These Terms and Conditions (Terms) constitute a legally binding agreement between you (\"you\", \"user\", \"client\", or \"lawyer\") and TulongLegal (\"we\", \"our\", or \"the Company\").<br/><br/>
+        Please read these Terms carefully before accessing or using our services.<br/><br/>
+        <b>1. Acceptance of Terms</b><br/>
+        By creating an account or using the TulongLegal app, you confirm that you have read, understood, and agreed to be bound by these Terms and our Privacy Policy. If you do not agree, please discontinue use of the service.<br/><br/>
+        <b>2. Description of the Service</b><br/>
+        TulongLegal provides the following services:<br/>
+        • Lawyer-client matching based on legal inquiry types<br/>
+        • In-app messaging between clients and verified lawyers<br/>
+        • A library of legal documents for reference<br/>
+        • A calendar view for lawyers to manage availability<br/>
+        We do not provide legal advice, legal representation, or appointment booking services.<br/><br/>
+        <b>3. Eligibility</b><br/>
+        You must be at least 18 years old to use TulongLegal. Clients must upload a valid government-issued ID to verify age and eligibility for certain features.<br/><br/>
+        <b>4. Account Roles and Verification</b><br/>
+        <b>4.1 Client Accounts</b><br/>
+        Clients must provide:<br/>
+        • Full name, contact number, email, and ID<br/>
+        • Additional case-related documents for PAO-related inquiries<br/><br/>
+        <b>4.2 Lawyer Accounts</b><br/>
+        Lawyers must provide:<br/>
+        • Full name, roll number, firm name and address<br/>
+        • Contact information and consultation fee<br/>
+        • Must be based in Baguio City and verified by an admin<br/><br/>
+        <b>5. Messaging</b><br/>
+        All communication on TulongLegal is strictly limited to in-app messaging between clients and lawyers. No peer-to-peer messaging or lawyer-to-lawyer messaging is permitted. Users must not screenshot, share, or disseminate message contents or profiles.<br/><br/>
+        <b>6. Profile Visibility</b><br/>
+        Client and lawyer profiles (including bios and credentials) are viewable to the opposite party to establish trust. This information must not be copied or distributed outside the platform.<br/><br/>
+        <b>7. Rules of Use</b><br/>
+        Users agree not to:<br/>
+        • Provide false information or impersonate others<br/>
+        • Disseminate, screenshot, or save profile or message data<br/>
+        • Use the platform for non-legal, illegal, or commercial purposes<br/>
+        • Harass, spam, or engage in any inappropriate behavior<br/>
+        Violations may result in suspension, legal action, or reporting to the proper authorities.<br/><br/>
+        <b>8. Legal Disclaimer</b><br/>
+        TulongLegal is not a law firm and does not provide legal advice. The platform serves only as a matching and communication tool between verified users and lawyers.<br/><br/>
+        <b>9. Termination</b><br/>
+        We may terminate or suspend your account for violations of these Terms or applicable laws.<br/><br/>
+        <b>10. Governing Law</b><br/>
+        These Terms are governed by the laws of the Republic of the Philippines. Any disputes will be resolved within the jurisdiction of Baguio City.<br/><br/>
+        <b>11. Contact Information</b><br/>
+        If you have any questions or concerns, contact us at:<br/>
+        Email: tulonglegal@gmail.com
+        ]]>
+    </string>
+
+    <string name="privacy_policy_content_placeholder">
+         <![CDATA[
+         <b>TulongLegal Privacy Policy</b><br/><br/>
+         TulongLegal, developed by Team TulongLegal, respects your privacy and is committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard your information.<br/><br/>
+         <b>1. Information We Collect</b><br/><br/>
+         <b>From Clients:</b><br/>
+         • Full Name<br/>
+         • Contact Number<br/>
+         • Email Address<br/>
+         • Username and Password<br/>
+         • Valid ID<br/>
+         • Case documents (for PAO-related cases)<br/>
+         • Legal inquiry prompts<br/><br/>
+         <b>From Lawyers:</b><br/>
+         • Full Name<br/>
+         • Contact Number<br/>
+         • Email Address<br/>
+         • Username and Password<br/>
+         • Roll Number<br/>
+         • Law Firm Name and Address<br/>
+         • Consultation Fee<br/><br/>
+         <b>Automatically Collected:</b><br/>
+         • IP address, device info<br/>
+         • Firebase authentication/session data<br/>
+         • Prompt inputs processed through Hugging Faces NLI model<br/><br/>
+         <b>2. Purpose of Collection</b><br/>
+         Your data is used to:<br/>
+         • Verify identity and account role<br/>
+         • Match clients with lawyers based on inquiry type<br/>
+         • Store and manage profile data<br/>
+         • Process legal prompts for accurate classification<br/>
+         • Facilitate in-app messaging<br/><br/>
+         <b>3. Data Sharing and Visibility</b><br/>
+         • No data is sold or rented to third parties<br/>
+         • Profile data is visible only to matched clients or lawyers<br/>
+         • Messaging is restricted to matched pairs<br/>
+         • Hugging Face NLI is used solely to process user-submitted prompts for better legal category matching<br/><br/>
+         <b>4. Data Storage</b><br/>
+         All data is securely stored on Google Firebase, which provides industry-standard encryption and secure access control.<br/><br/>
+         <b>5. User Rights</b><br/>
+         You may:<br/>
+         • Access or update your profile at any time<br/>
+         • Request account deletion<br/>
+         • Contact us about privacy concerns<br/>
+         Please send requests to: tulonglegal@gmail.com<br/><br/>
+         <b>6. Data Retention</b><br/>
+         We retain personal data only as long as necessary for account functionality or legal purposes. Deleted accounts may be archived temporarily for record-keeping.<br/><br/>
+         <b>7. Age Restriction</b><br/>
+         Only users aged 18 and above may use the platform. Verification via valid ID is required for full access.<br/><br/>
+         <b>8. Policy Changes</b><br/>
+         We may update this Privacy Policy to reflect improvements or changes. Major changes will be communicated through in-app notifications or email.<br/><br/>
+         <b>9. Contact Us</b><br/>
+         For questions or concerns about your privacy or these terms, please contact: tulonglegal@gmail.com
+         ]]>
+    </string>
+
+
 </resources>
