@@ -1,0 +1,230 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Legal Information"
+            android:textColor="#FF01212E"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="AFFILIATION"
+            android:textColor="#00292D"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+        <RadioGroup
+            android:id="@+id/affiliationRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp">
+
+            <RadioButton
+                android:id="@+id/radioPAO"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PAO" />
+
+            <RadioButton
+                android:id="@+id/radioPrivate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Private Law Firm" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/privateLawFirmDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Law Firm Name">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lawFirmNameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:hint="Office Address">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/lawFirmAddressEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPostalAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Roll Number">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/rollNumberEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/specializationLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Legal Specialization">
+
+            <AutoCompleteTextView
+                android:id="@+id/specializationDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/subcategoriesLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Subcategories"
+            android:visibility="gone">
+
+            <MultiAutoCompleteTextView
+                android:id="@+id/subcategoriesDropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/addCategoryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add More Specializations"
+            android:layout_marginTop="8dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Consultation Fee">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/consultationFeeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="AVAILABILITY"
+            android:textColor="#00292D"
+            android:textSize="12sp"
+            android:textStyle="bold"/>
+
+        <!-- Radio Group for General Availability Options -->
+        <RadioGroup
+            android:id="@+id/availabilityRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_no_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="No Hours Available" />
+
+            <RadioButton
+                android:id="@+id/radio_always_open"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Always open" />
+
+            <RadioButton
+                android:id="@+id/radio_permanently_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Permanently closed" />
+
+            <RadioButton
+                android:id="@+id/radio_temporarily_closed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Temporarily Closed" />
+
+            <RadioButton
+                android:id="@+id/radio_open_selected_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Open on selected hours" />
+        </RadioGroup>
+
+        <!-- Table-like Layout for Specific Hours -->
+        <LinearLayout
+            android:id="@+id/hours_layout"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/days_hours_container"
+                >
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="end"
+                >
+                <Button
+                    android:id="@+id/add_day_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Add +"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

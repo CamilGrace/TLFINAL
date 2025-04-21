@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+
+    <!-- Define color in res/values/colors.xml -->
+    <!-- Example: use the start color of your chat gradient -->
+    <!-- <color name="button_circle_bg">@color/chat_gradient_start</color> -->
+    <solid android:color="@color/navy_blue_dark" />
+
+    <!-- Size is usually controlled by the ImageButton layout params -->
+
+</shape>

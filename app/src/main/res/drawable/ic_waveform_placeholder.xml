@@ -1,0 +1,12 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="100dp"
+    android:height="30dp"
+    android:viewportWidth="100"
+    android:viewportHeight="30">
+
+    <!-- Default fill color - override with app:tint in your layout -->
+    <path
+        android:fillColor="#CCCCCC"
+        android:pathData="M2,15 L4,15 L4,15 L2,15Z M6,12 L8,12 L8,18 L6,18Z M10,9 L12,9 L12,21 L10,21Z M14,13 L16,13 L16,17 L14,17Z M18,11 L20,11 L20,19 L18,19Z M22,7 L24,7 L24,23 L22,23Z M26,10 L28,10 L28,20 L26,20Z M30,14 L32,14 L32,16 L30,16Z M34,12 L36,12 L36,18 L34,18Z M38,5 L40,5 L40,25 L38,25Z M42,8 L44,8 L44,22 L42,22Z M46,11 L48,11 L48,19 L46,19Z M50,13 L52,13 L52,17 L50,17Z M54,10 L56,10 L56,20 L54,20Z M58,4 L60,4 L60,26 L58,26Z M62,7 L64,7 L64,23 L62,23Z M66,12 L68,12 L68,18 L66,18Z M70,14 L72,14 L72,16 L70,16Z M74,9 L76,9 L76,21 L74,21Z M78,11 L80,11 L80,19 L78,19Z M82,6 L84,6 L84,24 L82,24Z M86,13 L88,13 L88,17 L86,17Z M90,10 L92,10 L92,20 L90,20Z M94,12 L96,12 L96,18 L94,18Z M98,15 L100,15 L100,15 L98,15Z"/>
+
+</vector>

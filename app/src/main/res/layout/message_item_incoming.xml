@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!-- Add ImageView for profile picture if needed -->
+    <!-- <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageProfile" ... /> -->
+
+    <LinearLayout
+        android:id="@+id/messageBubbleLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/chat_bubble_incoming"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_max="wrap"
+        app:layout_constraintWidth_percent="0.75"
+        app:layout_constraintHorizontal_bias="0.0">
+
+    <!-- Text Message -->
+    <TextView
+        android:id="@+id/messageText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="15sp"
+        tools:text="I think tomorrow evening... 🙂" />
+
+    <!-- Placeholder for Audio Message UI (Implement later) -->
+    <LinearLayout
+        android:id="@+id/audioPlayerLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:visibility="gone">
+
+    </LinearLayout>
+
+</LinearLayout>
+
+    <TextView
+    android:id="@+id/timestampText"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="11sp"
+    android:textColor="@color/gray_dark"
+    android:layout_marginTop="2dp"
+    app:layout_constraintTop_toBottomOf="@id/messageBubbleLayout"
+    app:layout_constraintStart_toStartOf="@id/messageBubbleLayout"
+        tools:text="11:05 AM" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

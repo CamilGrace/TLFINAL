@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval"> <!-- Use oval for a circular/pill shape -->
+
+    <solid android:color="@color/navy_blue_dark" /> <!-- CHANGE THIS COLOR! -->
+    <!-- Replace with your desired blue color -->
+    <!-- Example: @color/your_app_blue -->
+    <!-- Or hardcode: #2196F3 -->
+
+    <!-- You can optionally add size constraints here, but it's usually -->
+    <!-- better to control the size via the TextView's layout params, -->
+    <!-- padding, minWidth, and minHeight as done in conversation_list_item.xml -->
+    <!-- <size android:width="20dp" android:height="20dp"/> -->
+
+</shape>

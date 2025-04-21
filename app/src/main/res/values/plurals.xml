@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <plurals name="results_found">
+        <!-- Case for exactly one result -->
+        <item quantity="one">Showing %d result</item>
+        <!-- Case for zero or multiple results -->
+        <item quantity="other">Showing %d results</item>
+    </plurals>
+</resources>
